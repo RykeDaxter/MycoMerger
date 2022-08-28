@@ -1,4 +1,4 @@
-﻿MycoMerger
+MycoMerger
 ===============
 
 Extends Mycologists functionality to allow non-duplicate merges and unique merge results. Supports use by other mods including JSONCardLoader.
