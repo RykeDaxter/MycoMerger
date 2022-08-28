@@ -22,8 +22,10 @@ Simply install if you're not making new cards or mods. If you are, see below.
 `MergerManager.AddMergeData("SourceCardName", "TargetCardName", "Result")`
 * You can also specify `MergeInheritance` for a merge using:  
 `MergerManager.AddMergeData("SourceCardName", "TargetCardName", "Result", "MergeInheritance")`
-* If you don't include MycoMerger but want to add the option for any users who do install it, you can set an extended property for cards using the InscryptionAPI CardInfo extension with the following format:   
-`SourceCardInfo.SetExtendedProperty("MycoMerger", new Dictionary<string, string> { "TargetCard1": "Result1", "TargetCard2": "Result2:MergeInheritance" … } )`
+* If you don't include MycoMerger, you can set an extended property for cards using the InscryptionAPI CardInfo extension with the following format:   
+`SourceCardInfo.SetExtendedProperty("MycoMerger", "TargetCardName1:Result1, TargetCardName2:Result2:MergeInheritance … " )`
+* `SourceCardInfo` can be retrieved with `CardLoader.GetCardByName("SourceCardName")`.
+* Beware that if the `SourceCard` already has MycoMerger data as using `SetExtendedProperty` will overwrite that data. You can retrieve that data using `SourceCardInfo.GetExtendedProperty("MycoMerger")` and check if any data exists using `string.IsNullOrWhiteSpace`. You can append any new data with `string.Concat(ExistingMycomergerData, ",", "AdditionalMycomergerData")` before using that to set the extended property but beware duplicate `TargetCardName` entries.
 </details>
 
 <details>
@@ -90,7 +92,7 @@ You can manually install this mod by downloading the dll from the [Thunderstore 
 ## References
 
 <details>
-<summary>Configs:
+<summary>Configs
 </summary>
 
 |Section|Key|Default Value|Description|
@@ -106,7 +108,7 @@ You can manually install this mod by downloading the dll from the [Thunderstore 
 </details>
 
 <details>
-<summary>MergeResult:
+<summary>MergeResult
 </summary>
 
 You can specify these keywords instead of a card name for the merge result in order to dynamically choose which between the two cards involved in the merge will be the result. When no merge data is associated with a merge, UserDefault will typically be used to define the result. In the case of a tie, the result is equivalent to SourceCard.
@@ -129,7 +131,7 @@ Additionally, when both cards contain valid merge data targeting the other yet s
 </details>
 
 <details>
-<summary>MergeInheritance:
+<summary>MergeInheritance
 </summary>
 
 Determines what will be inherited by the result card of the merge.
@@ -186,6 +188,9 @@ This mod created by RykeDaxter.
 <details>
 <summary>Changelog
 </summary>
+
+### 1.0.1
+- README clarification for use with mods
 
 ### 1.0.0 
 - **Release**
