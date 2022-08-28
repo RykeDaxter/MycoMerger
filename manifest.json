@@ -5,6 +5,6 @@
     "description": "Extends Mycologists functionality to allow non-duplicate merges and unique merge results. Supports use by other mods including JSONCardLoader.",
     "dependencies": [
         "API_dev-API-2.4.0",
-        "BepInEx-BepInExPack_Inscryption-5.4.1901",
+        "BepInEx-BepInExPack_Inscryption-5.4.1901"
     ]
 }
