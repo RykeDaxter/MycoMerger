@@ -12,7 +12,7 @@ namespace MycoMerger
     {
         public const string PluginGuid = "rykedaxter.inscryption.mycomerger";
         public const string PluginName = "MycoMerger";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.0.1";
 
         private static Harmony harmony;
         internal static ManualLogSource Log;

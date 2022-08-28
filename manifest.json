@@ -1,6 +1,6 @@
 ﻿{
     "name": "MycoMerger",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "website_url": "https://github.com/RykeDaxter/KCTalkingCards",
     "description": "Extends Mycologists functionality to allow non-duplicate merges and unique merge results. Supports use by other mods including JSONCardLoader.",
     "dependencies": [
